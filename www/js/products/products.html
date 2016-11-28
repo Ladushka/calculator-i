@@ -1,0 +1,21 @@
+<ion-view view-title="Products" >
+  <ion-content>
+    <div class="row">
+      <div class="col-50 col header-colors">name</div>
+      <div class="col-33 col header-colors">calories/100</div>
+      <div class="col header-colors">
+        Инф
+      </div>
+    </div>
+    <div class="row" ng-repeat="product in products">
+      <div class="col-50 col">{{product.name}}</div>
+      <div class="col-33 col">{{product.calories}}</div>
+      <button class="col button-positive icon ion-clipboard" ng-click="modal.show()">
+      </button>
+    </div>
+    <button class="button button-full button-stable">
+      Add Product
+    </button>
+  </ion-content>
+
+</ion-view>
