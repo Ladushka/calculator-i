@@ -3,7 +3,8 @@
 
   angular.module('app',
     [
-      'ionic'
+      'ionic',
+      'ui.bootstrap'
     ]);
 
 })();

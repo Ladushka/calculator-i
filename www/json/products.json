@@ -1,0 +1,34 @@
+[
+  {
+    "name": "колбаса",
+    "calories": 123,
+    "fats":20,
+    "proteins":30,
+    "carbohydrates":45,
+    "type":"мясное"
+  },
+  {
+    "name": "сосиски",
+    "calories": 123,
+    "fats":20,
+    "proteins":30,
+    "carbohydrates":45,
+    "type":"мясное"
+  },
+  {
+    "name": "хлеб",
+    "calories": 123,
+    "fats":20,
+    "proteins":30,
+    "carbohydrates":45,
+    "type":"мучное"
+  },
+  {
+    "name": "макароны",
+    "calories": 123,
+    "fats":20,
+    "proteins":30,
+    "carbohydrates":45,
+    "type":"мучное"
+  }
+]

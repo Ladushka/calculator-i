@@ -3,30 +3,38 @@
 
   angular.module('app')
 
-    .controller('productsController', function ($scope, $http, $ionicModal, productsService) {
+    .controller('productsController', function ($scope, $http, $ionicModal, productsService, $uibModal) {
 
       productsService.getProducts().then(function (response) {
         $scope.products = response.data;
-        console.log($scope.products);
+
+        $scope.productNames = ($scope.products).map(function (item) {
+          return item.name;
+        })
       });
 
-      $ionicModal.fromTemplateUrl('js/products/moreProductDetails.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-      }).then(function (modal) {
-        $scope.modal = modal;
-        console.log('work');
+      productsService.getCategories().then(function (response) {
+        $scope.categories = (response.data).map(function (item) {
+          return item.type;
+        });
       });
-      $scope.openModal = function () {
-        $scope.modal.show();
+
+      $scope.openModal = function (product) {
+        $scope.product = product;
+        var modalInstance = $uibModal.open({
+          animation: $scope.animationsEnabled,
+          templateUrl: 'js/products/moreProductDetails.html',
+          size: 'lg',
+          scope: $scope
+        });
+        modalInstance.result.then(function () {
+         // $scope.save(product);
+        });
+
+
       };
-      $scope.closeModal = function () {
-        $scope.modal.hide();
-      };
-      // Cleanup the modal when we're done with it!
-      $scope.$on('$destroy', function () {
-        $scope.modal.remove();
-      });
+
+
 
     });
 })();

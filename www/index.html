@@ -8,23 +8,16 @@
     <link rel="manifest" href="manifest.json">
 
     <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/ionic/js/ionic.bundle.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.bundle.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -35,6 +28,13 @@
     <script src="js/start/sideMenuController.js"></script>
     <script src="js/products/productsController.js"></script>
     <script src="js/products/productsService.js"></script>
+    <script src="js/products/modalInstanceCtrl.js"></script>
+
+    <link href="bower_components/ionic/css/ionic.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
 
   <body ng-app="app">
