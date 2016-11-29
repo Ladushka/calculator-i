@@ -1,9 +1,21 @@
-<ion-view view-title="Products" >
+<ion-view view-title="Products">
   <ion-content>
-      <input type="text" class="rowInput" ng-model="selected" uib-typeahead="category for category in categories | filter:$viewValue | limitTo:8" class="form-control" placeholder="Category">
-      <input type="text" class="rowInput" ng-model="selected" uib-typeahead="name for name in productNames | filter:$viewValue | limitTo:8" class="form-control" placeholder="Product's name">
-
-
+    <div class="list">
+      <div class=" item item-divider">
+        Search
+      </div>
+      <input type="text" class="rowInput" ng-model="selected"
+             uib-typeahead="category for category in categories | filter:$viewValue | limitTo:8"
+             class="form-control"
+             placeholder="Category">
+      <input type="text" class="rowInput" ng-model="selected"
+             uib-typeahead="name for name in productNames | filter:$viewValue | limitTo:8"
+             class="form-control"
+             placeholder="Product's name">
+      <div class="item item-divider">
+        Products
+      </div>
+    </div>
     <div class="row">
       <div class="col-50 col header-colors">name</div>
       <div class="col-33 col header-colors">calories/100</div>
