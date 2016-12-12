@@ -39,6 +39,13 @@
         },
         getCategories:function () {
           return $http.get('json/categories.json');
+        },
+        getCategory:function (id) {
+          if(id==2) {
+            return $http.get('json/meat.json');
+          }else {
+            return $http.get('json/flour.json');
+          }
         }
       };
 

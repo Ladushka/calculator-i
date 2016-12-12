@@ -22,28 +22,6 @@
     }
   },
   {
-    "name": "хлеб",
-    "calories": 123,
-    "fats": 20,
-    "proteins": 30,
-    "carbohydrates": 45,
-    "category": {
-      "id":3,
-      "name":"мучное"
-    }
-  },
-  {
-    "name": "макароны",
-    "calories": 123,
-    "fats": 20,
-    "proteins": 30,
-    "carbohydrates": 45,
-    "category": {
-      "id":3,
-      "name":"мучное"
-    }
-  },
-  {
     "name": "сало",
     "calories": 123,
     "fats": 200,
