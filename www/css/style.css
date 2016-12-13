@@ -4,16 +4,23 @@
   text-align: center;
   border: 1px solid #ddd;
   padding: 5px;
-  width: 100%;
+  width: 50%;
   margin: 2px;
+
+  flex-basis: 13%;
+  max-width: 13%;
 }
 .col-50{
+  flex-basis: 40%;
+  max-width: 40%;
+}
+.col-5050{
   flex-basis: 50%;
   max-width: 50%;
 }
 .col-33{
-  flex-basis: 33%;
-  max-width: 33%;
+  flex-basis: 30%;
+  max-width: 30%;
 }
 .col-10{
   flex-basis: 50%;

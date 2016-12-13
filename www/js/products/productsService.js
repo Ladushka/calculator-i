@@ -46,6 +46,15 @@
           }else {
             return $http.get('json/flour.json');
           }
+        },
+        addProduct:function (product) {
+          return $http.put('',product);
+        },
+        addCategory:function (category) {
+          return $http.put('',category);
+        },
+        deleteProduct:function (id) {
+          return $http.delete('',id);
         }
       };
 

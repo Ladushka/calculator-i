@@ -9,10 +9,10 @@
              class="form-control"
              placeholder="Category">
 
-      <input type="text" class="rowInput" ng-model="name"
-             uib-typeahead="name for name in productNames | filter:$viewValue | limitTo:8"
-             class="form-control"
-             placeholder="Product's name">
+      <!--<input type="text" class="rowInput" ng-model="name"-->
+             <!--uib-typeahead="name for name in productNames | filter:$viewValue | limitTo:8"-->
+             <!--class="form-control"-->
+             <!--placeholder="Product's name">-->
       <button class="button button-dark button-block button-outline button-small" ng-click="find(category)">Find</button>
       <div class="item item-divider">
         Products
@@ -30,10 +30,16 @@
       <div class="col-33 col">{{product.calories}}</div>
       <button class="col button-positive icon ion-clipboard" ng-click="openModal(product)">
       </button>
+      <button class="col button-positive ion-close-round" ng-click="delete(product)">
+      </button>
     </div>
     <button class="button button-dark button-block button-outline button-small" ng-click="openModal2()">
       Add Product
     </button>
+    <button class="button button-dark button-block button-outline button-small" ng-click="openModal3()">
+      Add Category
+    </button>
+
 
   </ion-content>
 

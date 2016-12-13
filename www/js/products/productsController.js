@@ -3,18 +3,24 @@
 
   angular.module('app')
 
-    .controller('productsController', function ($scope, $http, $ionicModal, productsService, $uibModal) {
+    .controller('productsController', function ($scope, $http, $uibModal, $ionicModal, productsService) {
 
       $ionicModal.fromTemplateUrl('js/products/productEdit.html', {
         scope: $scope,
         animation: 'slide-in-up'
-      }).then(function(modal) {
+      }).then(function (modal) {
         $scope.modal = modal;
       });
-      $scope.openModal2 = function() {
+      $scope.openModal2 = function () {
         $scope.modal.show();
+        console.log(document.getElementsByTagName('input')[0].value);
+        if(document.getElementsByTagName('input')[0].value==""){
+          document.getElementsByTagName('input')[1].disabled = false;
+        }else{
+          document.getElementsByTagName('input')[1].disabled = true;
+        }
       };
-      $scope.closeModal = function() {
+      $scope.closeModal = function () {
         $scope.modal.hide();
       };
 
@@ -56,8 +62,46 @@
           });
 
         });
+      };
 
-      }
+      $scope.addProduct = function (newProduct) {
+        console.log(document.getElementsByTagName('input'));
+
+
+          newProduct.category = $scope.idCategory;
+          newProduct.id = 0;
+
+          productsService.addProduct(newProduct);
+          for (var i = 0; i < document.getElementsByTagName('input').length; i++) {
+            document.getElementsByTagName('input')[i].value = '';
+          }
+
+          $scope.closeModal();
+
+      };
+
+      $ionicModal.fromTemplateUrl('js/products/categoryEdit.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function (modal2) {
+        $scope.modal2 = modal2;
+      });
+      $scope.openModal3 = function () {
+        $scope.modal2.show();
+      };
+      $scope.closeModal2 = function () {
+        $scope.modal2.hide();
+      };
+      $scope.addCategory = function (newCategory) {
+        newCategory.id = 0;
+        document.getElementsByTagName('input')[1].value = '';
+        $scope.closeModal2();
+      };
+
+      $scope.delete=function (product) {
+        productsService.deleteProduct(product.id);
+        location.reload();
+      };
 
 
     });

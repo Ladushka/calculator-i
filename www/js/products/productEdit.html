@@ -1,23 +1,33 @@
-<ion-modal-view>
-  <ion-header-bar class="bar bar-header bar-positive">
-    <h1 class="title">New Contact</h1>
-    <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
-  </ion-header-bar>
-  <ion-content class="padding">
-    <div class="list">
-      <!--<label class="item item-input">-->
-        <!--<span class="input-label">First Name</span>-->
-        <!--<input  type="text">-->
-      <!--</label>-->
-      <!--<label class="item item-input">-->
-        <!--<span class="input-label">Last Name</span>-->
-        <!--<input  type="text">-->
-      <!--</label>-->
-      <!--<label class="item item-input">-->
-        <!--<span class="input-label">Email</span>-->
-        <!--<input  type="text">-->
-      <!--</label>-->
-      <button class="button button-full button-positive" >Create</button>
-    </div>
-  </ion-content>
-</ion-modal-view>
+<ion-header-bar class="bar bar-header bar-positive">
+  <h1 class="title">New Product</h1>
+  <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+</ion-header-bar>
+<ion-content class="padding">
+  <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Category</span>
+      <input ng-model="idCategory.name" type="text"  required>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Product name</span>
+      <input ng-model="newProduct.name" type="text" required>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Calories</span>
+      <input ng-model="newProduct.calories" type="number" required>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Fats</span>
+      <input  ng-model="newProduct.fats" type="number" required>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Proteins</span>
+      <input  ng-model="newProduct.proteins" type="number" required>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Carbohydrates</span>
+      <input  ng-model="newProduct.carbohydrates" type="number" required>
+    </label>
+    <button class="button button-full button-positive" ng-click="addProduct(newProduct)">Create</button>
+  </div>
+</ion-content>

@@ -38,6 +38,16 @@
           }
         })
 
+        .state('app.dish', {
+          url: '/dish',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/dish.html',
+              controller:'dishController'
+            }
+          }
+        })
+
         .state('app.browse', {
           url: '/browse',
           views: {
